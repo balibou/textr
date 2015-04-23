@@ -40,8 +40,6 @@ Template.messages.helpers({
 Template.input.helpers({
     'msgs':function(){
       if(Session.get('roomid')){
-        
-      
         return true;
     }
   }
@@ -59,7 +57,7 @@ Template.input.events = {
                 var de=ChatRooms.update({"_id":Session.get("roomid")},{$push:{messages:{
                  name: name,
                  text: message.value,
-                 createdAt: Date.now()
+                 createdAt: Date.now()/1000
                 }}});
                 document.getElementById('message').value = '';
                 message.value = '';

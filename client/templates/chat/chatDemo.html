@@ -30,7 +30,9 @@
 
 <template name="messages">
   {{#each msgs}}
-    <strong>{{name}}:</strong> {{text}}<br>
+    <strong>{{name}}:</strong> {{text}}
+    <span class="timestamp">&ndash; <span data-livestamp="{{createdAt}}"></span></span>
+    <br>
   {{/each}}
 </template>
 
