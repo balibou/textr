@@ -1,4 +1,4 @@
-Deps.autorun(function(){
-    Meteor.subscribe("chatrooms");
-    Meteor.subscribe("onlusers");
-});
+// Deps.autorun(function(){
+//     Meteor.subscribe("chatrooms");
+//     Meteor.subscribe("onlusers");
+// });
