@@ -1,0 +1,13 @@
+<template name ="chat">
+  <div id="wrapper">
+    {{> sidebar }}
+    <div id="page-content-wrapper">
+      {{#if currentUser}}
+      {{else}}
+        <h1>Bienvenue sur Textr !</h1>
+      {{/if}}
+      {{> input }}
+      {{> messages }}
+    </div>
+  </div>
+</template>
