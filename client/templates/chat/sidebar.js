@@ -10,8 +10,7 @@ Template.sidebar.events({
     var res=ChatRooms.findOne({chatIds:{$all:[this._id,Meteor.userId()]}});
     if(res){
       Session.set("roomid",res._id);
-    }
-    else{
+    }else{
       var newRoom= ChatRooms.insert({chatIds:[this._id , Meteor.userId()],messages:[]});
       Session.set('roomid',newRoom);
     }

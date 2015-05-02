@@ -9,8 +9,7 @@ Template.input.helpers({
 Template.input.events = {
   'keydown input#message' : function (event) {
     if (event.which == 13) { 
-      if (Meteor.user())
-      {
+      if (Meteor.user()){
         var name = Meteor.user().username;
         var message = document.getElementById('message');
         if (message.value !== '') {
