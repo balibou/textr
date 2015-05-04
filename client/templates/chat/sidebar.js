@@ -6,14 +6,15 @@ Template.sidebar.helpers({
 
 Template.sidebar.events({
   'click .user':function(){
-    Session.set('currentId',this._id);
-    console.log(Session.get('currentId'));
-  //   var res=ChatRooms.findOne({chatIds:{$all:[this._id,Meteor.userId()]}});
-  //   if(res){
-  //     Session.set("roomid",res._id);
-  //   }else{
-  //     var newRoom= ChatRooms.insert({chatIds:[this._id , Meteor.userId()],messages:[]});
-  //     Session.set('roomid',newRoom);
-  //   }
+    // Session.set('currentId',this._id);
+    // console.log(Session.get('currentId'));
+    var userId = this._id;
+    var res=ChatRooms.findOne({chatIds:{$all:[userId,Meteor.userId()]}});
+    if(res){
+      Session.set("roomid",res._id);
+    }else{
+      var newRoom= ChatRooms.insert({chatIds:[userId , Meteor.userId()],messages:[]});
+      Session.set('roomid',newRoom);
+    }
   }
 });

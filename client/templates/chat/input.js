@@ -18,7 +18,8 @@ Template.input.events({
       if (error){
         return alert(error.reason);
       }
-      var de=ChatRooms.update({"_id":Session.get("roomid")},{$push:{messages:message}});
+      var chatId = ChatRooms.update({"_id":Session.get("roomid")},{$push:{messages:result.message}});
+      console.log(chatId);
     });
     
     e.target.message.value = "";
