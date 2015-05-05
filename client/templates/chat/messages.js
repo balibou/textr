@@ -1,8 +1,5 @@
 Template.messages.helpers({
   'msgs':function(){
-    if(Session.get('roomid')){
-      var result=ChatRooms.findOne({_id:Session.get('roomid')});
-      return result.messages;
-    }
+    return ChatRooms.findOne({_id:this._id}).messages;
   }
 });
