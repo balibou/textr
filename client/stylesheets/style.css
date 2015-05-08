@@ -130,3 +130,7 @@ html {
         margin-right: 0;
     }
 }
+
+.badge {
+  display: inline;
+}
