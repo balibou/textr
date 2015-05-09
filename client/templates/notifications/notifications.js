@@ -1,5 +1,16 @@
 Template.notifications.helpers({
   notificationCount: function(){
+
+    // if (Notification.permission !== "granted")
+    // Notification.requestPermission();
+
+    // if(Notifications.find({userId: Meteor.userId(), read: false}).count() > 0){
+    //   var notification = new Notification('Notification', {
+    //   icon: '',
+    //   body: "Vous avez un nouveau message!",
+    //   });
+    // }
+
     return Notifications.find({userId: Meteor.userId(), read: false}).count();
   },
   notificationChatroomPath: function() {
@@ -9,14 +20,9 @@ Template.notifications.helpers({
 
 Template.notifications.events({
   'click a': function() {
-    var notifs = Notifications.find({userId: Meteor.userId(), read: false}).fetch().length;
-    var i=0;
-    for (i=0; i<notifs; i++){
-      // console.log(notifsid.push(Notifications.find({userId: Meteor.userId(), read: false}).fetch()[i]._id));
-      // var result = result + Notifications.update(notifsid, {$set: {read: true}});
-      notifsid = Notifications.find({userId: Meteor.userId(), read: false}).fetch()[i]._id;
-      console.log(notifsid);
-      Notifications.update(notifsid, {$set: {read: true}});
-    }
+    var notifs = Notifications.find({userId: Meteor.userId(), read: false});
+    notifs.forEach(function (notif) {
+      Notifications.update(notif._id, {$set: {read: true}});
+    });
   }
 });
