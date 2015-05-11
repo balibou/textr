@@ -1,15 +1,26 @@
 Template.notifications.helpers({
   notificationCount: function(){
 
-    // if (Notification.permission !== "granted")
-    // Notification.requestPermission();
+    if (Notification.permission !== "granted")
+    Notification.requestPermission();  
 
-    // if(Notifications.find({userId: Meteor.userId(), read: false}).count() > 0){
-    //   var notification = new Notification('Notification', {
-    //   icon: '',
-    //   body: "Vous avez un nouveau message!",
-    //   });
-    // }
+    var count = 0;
+    var query = Notifications.find({userId: Meteor.userId(), read: false});
+    (function() {
+      var initializing = true;
+      query.observeChanges({
+        addedBefore: function(id, notification, before) {
+          if (!initializing) {
+            console.log(count);
+            var notification = new Notification('Notification', {
+              icon: '',
+              body: "Vous avez un nouveau message !"
+            });
+          }
+        }
+      });
+      initializing = false;
+    })();
 
     return Notifications.find({userId: Meteor.userId(), read: false}).count();
   },
