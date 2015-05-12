@@ -1,0 +1,40 @@
+<template name="profile">
+  {{> quickForm collection="Meteor.users" doc=user id="user-profile-form" type="update" omitFields="emails,createdAt, services, status,username"}}
+</template>
+
+<!-- "_id": "GyJMDRuY49PgTTW5y",
+  "emails": [
+    {
+      "address": "admin@admin.com",
+      "verified": false
+    }
+  ],
+  "profile": {},
+  "username": "admin",
+  "createdAt": "2015-05-07T14:39:33.272Z",
+  "services": {
+    "password": {
+      "bcrypt": "$2a$10$0kXKO6RHLQ2DOmqcsVL.aeY25jeQSWqT.TjXpZMGFt2NTgvCz5Rq2"
+    },
+    "resume": {
+      "loginTokens": [
+        {
+          "when": "2015-05-11T20:05:54.752Z",
+          "hashedToken": "dBe4y4STDXCPIi/5CGXdyupDyW4JFZcuOgmf4/zfMU4="
+        },
+        {
+          "when": "2015-05-12T12:55:53.710Z",
+          "hashedToken": "4ULkklrL5ML0O7mbowOFOT1aMKxVqsQQGb57ntutjsQ="
+        }
+      ]
+    }
+  },
+  "status": {
+    "online": true,
+    "lastLogin": {
+      "date": "2015-05-12T13:03:41.332Z",
+      "ipAddr": "127.0.0.1",
+      "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:37.0) Gecko/20100101 Firefox/37.0"
+    },
+    "idle": false
+  } -->
