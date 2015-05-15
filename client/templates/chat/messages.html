@@ -1,7 +1,13 @@
 <template name="messages">
-  {{#each msgs}}
-    <strong>{{name}}:</strong> {{text}}
-    <span class="timestamp">&ndash; <span data-livestamp="{{createdAt}}"></span></span>
-    <br>
-  {{/each}}
+  <div class="message-history">
+    {{#each msgs}}
+      <div class="message">
+        <a href="" class="message_profile-pic"></a>
+        <a href="" class="message_username">{{name}}</a>
+        <span class="message_timestamp"><span data-livestamp="{{createdAt}}"></span></span>
+        <span class="message_star"></span>
+        <span class="message_content">{{text}}</span>
+    </div>
+    {{/each}}
+</div>
 </template>

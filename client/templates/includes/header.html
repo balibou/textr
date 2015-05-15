@@ -1,5 +1,5 @@
 <template name="header">
-  <nav class="navbar navbar-default" role="navigation">
+<!--   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
@@ -16,5 +16,15 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
+
+  <div class="header">
+    <div class="team-menu">{{> loginButtons}}</div>
+    <div class="channel-menu">
+      <span class="channel-menu_name">
+        <span class="channel-menu_prefix">#</span>
+        Utilisateur
+      </span>
+    </div>
+  </div>
 </template>

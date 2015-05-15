@@ -1,4 +1,6 @@
 <template name="profile">
+  <!-- {{> avatar user=this shape="circle"}} -->
+  
   {{> quickForm collection="Meteor.users" doc=user id="user-profile-form" type="update" omitFields="emails,createdAt, services, status,username"}}
 </template>
 

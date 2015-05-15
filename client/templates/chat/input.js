@@ -1,14 +1,15 @@
-Template.input.helpers({
-  'msgs':function(){
-    if(Session.get('roomid')){
-      return true;
-    }
-  }
-});
+// Template.input.helpers({
+//   'msgs':function(){
+//     if(Session.get('roomid')){
+//       return true;
+//     }
+//   }
+// });
 
 Template.input.events({
   'submit form' : function (e,template) {
     e.preventDefault(); //ne marche pas ?
+    e.stopPropagation();
 
     var message ={
       text: e.target.message.value,
